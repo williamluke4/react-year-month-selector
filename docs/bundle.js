@@ -2720,6 +2720,16 @@ module.exports = DOMLazyTree;
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
+
+
+module.exports = __webpack_require__(15);
+
+
+/***/ }),
+/* 20 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
 /**
  * Copyright (c) 2013-present, Facebook, Inc.
  *
@@ -2730,7 +2740,7 @@ module.exports = DOMLazyTree;
 
 
 
-var EventPluginHub = __webpack_require__(20);
+var EventPluginHub = __webpack_require__(21);
 var EventPluginUtils = __webpack_require__(34);
 
 var accumulateInto = __webpack_require__(58);
@@ -2853,7 +2863,7 @@ var EventPropagators = {
 module.exports = EventPropagators;
 
 /***/ }),
-/* 20 */
+/* 21 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3130,7 +3140,7 @@ var EventPluginHub = {
 module.exports = EventPluginHub;
 
 /***/ }),
-/* 21 */
+/* 22 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3192,7 +3202,7 @@ SyntheticEvent.augmentClass(SyntheticUIEvent, UIEventInterface);
 module.exports = SyntheticUIEvent;
 
 /***/ }),
-/* 22 */
+/* 23 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -3239,16 +3249,6 @@ var ReactInstanceMap = {
 };
 
 module.exports = ReactInstanceMap;
-
-/***/ }),
-/* 23 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-module.exports = __webpack_require__(15);
-
 
 /***/ }),
 /* 24 */
@@ -3994,7 +3994,7 @@ module.exports = TransactionImpl;
 
 
 
-var SyntheticUIEvent = __webpack_require__(21);
+var SyntheticUIEvent = __webpack_require__(22);
 var ViewportMetrics = __webpack_require__(65);
 
 var getEventModifierState = __webpack_require__(38);
@@ -5803,7 +5803,7 @@ module.exports = KeyEscapeUtils;
 var _prodInvariant = __webpack_require__(2);
 
 var ReactCurrentOwner = __webpack_require__(9);
-var ReactInstanceMap = __webpack_require__(22);
+var ReactInstanceMap = __webpack_require__(23);
 var ReactInstrumentation = __webpack_require__(7);
 var ReactUpdates = __webpack_require__(10);
 
@@ -9006,7 +9006,7 @@ var ReactDOMComponentTree = __webpack_require__(4);
 var ReactDOMContainerInfo = __webpack_require__(175);
 var ReactDOMFeatureFlags = __webpack_require__(176);
 var ReactFeatureFlags = __webpack_require__(62);
-var ReactInstanceMap = __webpack_require__(22);
+var ReactInstanceMap = __webpack_require__(23);
 var ReactInstrumentation = __webpack_require__(7);
 var ReactMarkupChecksum = __webpack_require__(177);
 var ReactReconciler = __webpack_require__(17);
@@ -9567,18 +9567,18 @@ module.exports = __webpack_require__(83);
 
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_dom___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_react_dom__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_react_month_picker_input__ = __webpack_require__(185);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Example__ = __webpack_require__(185);
 
 
 
 __WEBPACK_IMPORTED_MODULE_1_react_dom___default.a.render((__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", null,
     __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("label", { htmlFor: "ex-0" },
         "Without default value",
-        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2_react_month_picker_input__["a" /* default */], { year: 2018, month: 1, onChange: function (month, year) { return alert(month); }, open: true })))), document.getElementById('examples'));
+        __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Example__["a" /* default */], null)))), document.getElementById('examples'));
 
 
 /***/ }),
@@ -12345,7 +12345,7 @@ module.exports = ARIADOMPropertyConfig;
 
 
 
-var EventPropagators = __webpack_require__(19);
+var EventPropagators = __webpack_require__(20);
 var ExecutionEnvironment = __webpack_require__(5);
 var FallbackCompositionState = __webpack_require__(104);
 var SyntheticCompositionEvent = __webpack_require__(105);
@@ -12909,8 +12909,8 @@ module.exports = SyntheticInputEvent;
 
 
 
-var EventPluginHub = __webpack_require__(20);
-var EventPropagators = __webpack_require__(19);
+var EventPluginHub = __webpack_require__(21);
+var EventPropagators = __webpack_require__(20);
 var ExecutionEnvironment = __webpack_require__(5);
 var ReactDOMComponentTree = __webpack_require__(4);
 var ReactUpdates = __webpack_require__(10);
@@ -13945,7 +13945,7 @@ module.exports = DefaultEventPluginOrder;
 
 
 
-var EventPropagators = __webpack_require__(19);
+var EventPropagators = __webpack_require__(20);
 var ReactDOMComponentTree = __webpack_require__(4);
 var SyntheticMouseEvent = __webpack_require__(29);
 
@@ -14728,7 +14728,7 @@ var DOMLazyTree = __webpack_require__(18);
 var DOMNamespaces = __webpack_require__(40);
 var DOMProperty = __webpack_require__(12);
 var DOMPropertyOperations = __webpack_require__(69);
-var EventPluginHub = __webpack_require__(20);
+var EventPluginHub = __webpack_require__(21);
 var EventPluginRegistry = __webpack_require__(27);
 var ReactBrowserEventEmitter = __webpack_require__(32);
 var ReactDOMComponentFlags = __webpack_require__(57);
@@ -16279,7 +16279,7 @@ module.exports = quoteAttributeValueForBrowser;
 
 
 
-var EventPluginHub = __webpack_require__(20);
+var EventPluginHub = __webpack_require__(21);
 
 function runEventQueueInBatch(events) {
   EventPluginHub.enqueueEvents(events);
@@ -16999,7 +16999,7 @@ module.exports = ReactDOMTextarea;
 var _prodInvariant = __webpack_require__(2);
 
 var ReactComponentEnvironment = __webpack_require__(43);
-var ReactInstanceMap = __webpack_require__(22);
+var ReactInstanceMap = __webpack_require__(23);
 var ReactInstrumentation = __webpack_require__(7);
 
 var ReactCurrentOwner = __webpack_require__(9);
@@ -17609,7 +17609,7 @@ var React = __webpack_require__(15);
 var ReactComponentEnvironment = __webpack_require__(43);
 var ReactCurrentOwner = __webpack_require__(9);
 var ReactErrorUtils = __webpack_require__(35);
-var ReactInstanceMap = __webpack_require__(22);
+var ReactInstanceMap = __webpack_require__(23);
 var ReactInstrumentation = __webpack_require__(7);
 var ReactNodeTypes = __webpack_require__(73);
 var ReactReconciler = __webpack_require__(17);
@@ -19669,7 +19669,7 @@ module.exports = getUnboundedScrollPosition;
 
 
 var DOMProperty = __webpack_require__(12);
-var EventPluginHub = __webpack_require__(20);
+var EventPluginHub = __webpack_require__(21);
 var EventPluginUtils = __webpack_require__(34);
 var ReactComponentEnvironment = __webpack_require__(43);
 var ReactEmptyComponent = __webpack_require__(74);
@@ -20582,7 +20582,7 @@ module.exports = SVGDOMPropertyConfig;
 
 
 
-var EventPropagators = __webpack_require__(19);
+var EventPropagators = __webpack_require__(20);
 var ExecutionEnvironment = __webpack_require__(5);
 var ReactDOMComponentTree = __webpack_require__(4);
 var ReactInputSelection = __webpack_require__(78);
@@ -20777,7 +20777,7 @@ module.exports = SelectEventPlugin;
 var _prodInvariant = __webpack_require__(2);
 
 var EventListener = __webpack_require__(77);
-var EventPropagators = __webpack_require__(19);
+var EventPropagators = __webpack_require__(20);
 var ReactDOMComponentTree = __webpack_require__(4);
 var SyntheticAnimationEvent = __webpack_require__(166);
 var SyntheticClipboardEvent = __webpack_require__(167);
@@ -20788,7 +20788,7 @@ var SyntheticMouseEvent = __webpack_require__(29);
 var SyntheticDragEvent = __webpack_require__(171);
 var SyntheticTouchEvent = __webpack_require__(172);
 var SyntheticTransitionEvent = __webpack_require__(173);
-var SyntheticUIEvent = __webpack_require__(21);
+var SyntheticUIEvent = __webpack_require__(22);
 var SyntheticWheelEvent = __webpack_require__(174);
 
 var emptyFunction = __webpack_require__(8);
@@ -21085,7 +21085,7 @@ module.exports = SyntheticClipboardEvent;
 
 
 
-var SyntheticUIEvent = __webpack_require__(21);
+var SyntheticUIEvent = __webpack_require__(22);
 
 /**
  * @interface FocusEvent
@@ -21124,7 +21124,7 @@ module.exports = SyntheticFocusEvent;
 
 
 
-var SyntheticUIEvent = __webpack_require__(21);
+var SyntheticUIEvent = __webpack_require__(22);
 
 var getEventCharCode = __webpack_require__(49);
 var getEventKey = __webpack_require__(170);
@@ -21365,7 +21365,7 @@ module.exports = SyntheticDragEvent;
 
 
 
-var SyntheticUIEvent = __webpack_require__(21);
+var SyntheticUIEvent = __webpack_require__(22);
 
 var getEventModifierState = __webpack_require__(38);
 
@@ -21688,7 +21688,7 @@ var _prodInvariant = __webpack_require__(2);
 
 var ReactCurrentOwner = __webpack_require__(9);
 var ReactDOMComponentTree = __webpack_require__(4);
-var ReactInstanceMap = __webpack_require__(22);
+var ReactInstanceMap = __webpack_require__(23);
 
 var getHostComponentFromComposite = __webpack_require__(81);
 var invariant = __webpack_require__(0);
@@ -22013,11 +22013,62 @@ module.exports = ReactDOMInvalidARIAHook;
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__OutsideClickWrapper__ = __webpack_require__(186);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Head__ = __webpack_require__(187);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(188);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_react_year_month_selector__ = __webpack_require__(186);
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
+
+
+var Example = /** @class */ (function (_super) {
+    __extends(Example, _super);
+    function Example(props) {
+        var _this = _super.call(this, props) || this;
+        _this.handleOpen = function () {
+            console.log("Running Handle Open");
+            _this.setState({
+                open: true
+            });
+        };
+        _this.handleClose = function () {
+            console.log("Running Handle Close");
+            _this.setState({ open: false });
+        };
+        _this.state = {
+            open: false
+        };
+        return _this;
+    }
+    Example.prototype.render = function () {
+        return (__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("div", null,
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement("button", { onClick: this.handleOpen }, "Open"),
+            __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1_react_year_month_selector__["a" /* default */], { year: 2018, month: 1, onChange: function (year, month) { return console.log(month); }, open: this.state.open, onClose: this.handleClose })));
+    };
+    return Example;
+}(__WEBPACK_IMPORTED_MODULE_0_react__["Component"]));
+/* harmony default export */ __webpack_exports__["a"] = (Example);
+
+
+/***/ }),
+/* 186 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(19);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__OutsideClickWrapper__ = __webpack_require__(187);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Head__ = __webpack_require__(188);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__constants__ = __webpack_require__(189);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__styles_index_css__ = __webpack_require__(190);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__styles_index_css___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_4__styles_index_css__);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
         ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
@@ -22032,6 +22083,7 @@ var __extends = (this && this.__extends) || (function () {
 
 
 
+
 var MonthCalendar = /** @class */ (function (_super) {
     __extends(MonthCalendar, _super);
     function MonthCalendar(props) {
@@ -22041,6 +22093,9 @@ var MonthCalendar = /** @class */ (function (_super) {
                 _this.props.onChange(selectedYear, selectedMonth);
             }
         };
+        _this.onClose = function () {
+            _this.props.onClose();
+        };
         _this.selectYear = function (selectedYear) {
             _this.setState({ selectedYear: selectedYear, currentView: __WEBPACK_IMPORTED_MODULE_3__constants__["b" /* VIEW_MONTHS */] });
             _this.onChange(selectedYear, _this.state.selectedMonth);
@@ -22048,6 +22103,7 @@ var MonthCalendar = /** @class */ (function (_super) {
         _this.selectMonth = function (selectedMonth) {
             _this.setState({ selectedMonth: selectedMonth });
             _this.onChange(_this.state.selectedYear, selectedMonth);
+            _this.onClose();
         };
         _this.previous = function () {
             var startYear = _this.state.years[0] - 12;
@@ -22106,7 +22162,7 @@ var MonthCalendar = /** @class */ (function (_super) {
         var _a = this.state, selectedYear = _a.selectedYear, selectedMonth = _a.selectedMonth;
         var open = this.props.open;
         if (open) {
-            return (__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__OutsideClickWrapper__["a" /* default */], { onOutsideClick: this.props.onOutsideClick, className: "calendar-container" },
+            return (__WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_1__OutsideClickWrapper__["a" /* default */], { onOutsideClick: function () { }, className: "calendar-container" },
                 __WEBPACK_IMPORTED_MODULE_0_react___default.a.createElement(__WEBPACK_IMPORTED_MODULE_2__Head__["a" /* default */], { year: selectedYear, month: selectedMonth ? selectedMonth + 1 : undefined, onValueClick: function () { return _this.setState({ currentView: __WEBPACK_IMPORTED_MODULE_3__constants__["c" /* VIEW_YEARS */] }); }, onPrev: this.previous, onNext: this.next }),
                 this.isYears() ? this.renderYears() : this.renderMonths()));
         }
@@ -22123,11 +22179,11 @@ var MonthCalendar = /** @class */ (function (_super) {
 
 
 /***/ }),
-/* 186 */
+/* 187 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 // @flow
 
@@ -22155,11 +22211,11 @@ var OutsideClickWrapper = function (_a) {
 
 
 /***/ }),
-/* 187 */
+/* 188 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(23);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_react___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_react__);
 var __extends = (this && this.__extends) || (function () {
     var extendStatics = Object.setPrototypeOf ||
@@ -22203,7 +22259,7 @@ var Head = /** @class */ (function (_super) {
 
 
 /***/ }),
-/* 188 */
+/* 189 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -22227,6 +22283,12 @@ var MONTHS_NAMES = [
 var VIEW_YEARS = 'YEARS';
 var VIEW_MONTHS = 'MONTHS';
 
+
+/***/ }),
+/* 190 */
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ })
 /******/ ]);

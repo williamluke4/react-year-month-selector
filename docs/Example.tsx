@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import MonthPicker from 'react-year-month-selector';
-
+import './style.css'
 
 
 export interface IState {

@@ -3,12 +3,12 @@ var path = require('path')
 var ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 module.exports = {
-  entry: './src/MonthPickerInput',
+  entry: './src/index',
   output: {
     libraryTarget: 'umd',
-    library: 'ReactMonthPickerInput',
+    library: 'ReactYearMonthSelector',
     path: path.resolve('./dist/'),
-    filename: 'react-month-picker-input.js'
+    filename: 'react-year-month-selector.js'
   },
   module: {
     loaders: [
@@ -69,7 +69,7 @@ module.exports = {
   ],
   node: { Buffer: false },
   plugins: [
-    new ExtractTextPlugin('react-month-picker-input.css', { allChunks: true }),
+    new ExtractTextPlugin('react-year-month-selector.css', { allChunks: true }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
     })

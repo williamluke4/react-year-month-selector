@@ -5,7 +5,7 @@ A month picker input and calendar for [React](http://facebook.github.io/react/in
 
 ## Demo
 
-Live demo: [slavakisel.github.io/react-month-picker-input](https://slavakisel.github.io/react-month-picker-input/)
+Live demo: [williamluke4.github.io/react-year-month-selector](https://williamluke4.github.io/react-year-month-selector/)
 
 ## API
 
@@ -19,18 +19,18 @@ Live demo: [slavakisel.github.io/react-month-picker-input](https://slavakisel.gi
 ## Installation
 
 ```
-npm install react-month-picker-input --save
+npm install react-year-month-selector --save
 ```
 
 ## Usage
 
-React-Month-Picker-Input generates an input field and year/month calendar opened on field focus.
+React-Year-Month-Selector provides a dialog which returns the selected Year and Month
 
 ```js
-var MonthPickerInput = require('react-month-picker-input');
-require('react-month-picker-input/dist/react-month-picker-input.css');
+var YearMonthSelector = require('react-year-month-selector');
+require('react-year-month-selector/dist/react-year-month-selector.css');
 
-<MonthPickerInput
+<YearMonthSelector
   value={new Date()}
   onChange={function(selectedYear, selectedMonth) {
     console.log(selectedYear, selectedMonth);

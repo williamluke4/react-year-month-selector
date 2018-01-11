@@ -18,8 +18,8 @@ module.exports = {
   resolve: {
     extensions: ['.js', '.ts', '.tsx'],
     alias: {
-      'react-month-picker-input/dist/react-month-picker-input.css': path.resolve('./src/styles/index.scss'),
-      'react-month-picker-input': path.resolve('./src/MonthPickerInput.tsx')
+      'react-year-month-selector/dist/react-year-month-selector.css': path.resolve('./src/styles/index.scss'),
+      'react-year-month-selector': path.resolve('./src/index.tsx')
     }
   },
   module: {

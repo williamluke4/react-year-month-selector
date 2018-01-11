@@ -1,19 +1,22 @@
 {
-  "name": "react-month-picker-input",
-  "version": "1.0.0",
-  "description": "Simple month picker with calendar and input field with mask.",
-  "main": "./dist/react-month-picker-input.js",
+  "name": "react-year-month-selector",
+  "version": "0.0.1",
+  "description": "Simple React Year and Month Selector",
+  "main": "./dist/react-year-month-selector.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/slavakisel/react-month-picker-input.git"
+    "url": "git+https://github.com/williamluke4/react-year-month-selector.git"
   },
   "keywords": [
     "react",
-    "month picker"
+    "month",
+    "year",
+    "picker",
+    "selector"
   ],
-  "author": "Slava Kisel <letitbe400@gmail.com>",
+  "author": "William Luke <william@atto-byte.com>",
   "bugs": {
-    "url": "https://github.com/slavakisel/react-month-picker-input/issues"
+    "url": "https://github.com/williamluke4/react-year-month-selector/issues"
   },
   "license": "MIT",
   "devDependencies": {

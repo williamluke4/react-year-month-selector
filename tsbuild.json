@@ -14,8 +14,8 @@
     "baseUrl": "./src/",
     "types": ["node", "mocha", "chai"],
     "paths": {
-      "react-month-picker-input": ["MonthPickerInput.tsx"],
-      "react-month-picker-input/dist/react-datepicker.css": ["styles/index.css"]
+      "react-year-month-selector": ["index.tsx"],
+      "react-year-month-selector/dist/react-datepicker.css": ["styles/index.css"]
     }
   },
   "exclude": [

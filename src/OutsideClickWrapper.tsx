@@ -1,5 +1,5 @@
 // @flow
-import React, { PropTypes } from 'react';
+import React from 'react';
 
 interface IProps {
   onOutsideClick: (e: any) => any,

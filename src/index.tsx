@@ -1,16 +1,18 @@
 import React, { Component } from 'react';
 
-import OutsideClickWrapper from '../OutsideClickWrapper';
+import OutsideClickWrapper from './OutsideClickWrapper';
 
 import Head from './Head';
 import { MONTHS_NAMES, VIEW_MONTHS, VIEW_YEARS } from './constants';
-
+import './styles/index.css';
 export interface IProps {
   year: void|number,
   month: void|number,
   startYear?: number,
+  open: boolean,
   onChange: (selectedYear: number, selectedMonth: number) => any,
-  onOutsideClick: (e: any) => any,
+  onClose: () => any,
+  onOutsideClick?: (e: any) => any,
 }
 
 export interface IState {
@@ -21,6 +23,10 @@ export interface IState {
 }
 
 class MonthCalendar extends Component<IProps, IState> {
+  public static defaultProps: Partial<IProps> = {
+    onOutsideClick: () => {}
+  };
+
   constructor(props: IProps){
     super(props);
 
@@ -57,6 +63,9 @@ class MonthCalendar extends Component<IProps, IState> {
       this.props.onChange(selectedYear, selectedMonth);
     }
   }
+  onClose = (): void => {
+    this.props.onClose();
+  }
 
   selectYear = (selectedYear: number): void => {
     this.setState({ selectedYear, currentView: VIEW_MONTHS });
@@ -66,6 +75,7 @@ class MonthCalendar extends Component<IProps, IState> {
   selectMonth = (selectedMonth: number): void => {
     this.setState({ selectedMonth });
     this.onChange(this.state.selectedYear, selectedMonth);
+    this.onClose();
   };
 
   previous = (): void => {
@@ -122,22 +132,25 @@ class MonthCalendar extends Component<IProps, IState> {
 
   render(): JSX.Element {
     const { selectedYear, selectedMonth } = this.state;
+    const { open } = this.props;
+    if(open){
+      return (
+        <OutsideClickWrapper
+          onOutsideClick={() => {}}
+          className="calendar-container"
+        >
+          <Head
+            year={selectedYear}
+            month={selectedMonth ? selectedMonth + 1 : undefined}
+            onValueClick={() => this.setState({ currentView: VIEW_YEARS })}
+            onPrev={this.previous}
+            onNext={this.next} />
 
-    return (
-      <OutsideClickWrapper
-        onOutsideClick={this.props.onOutsideClick}
-        className="calendar-container"
-      >
-        <Head
-          year={selectedYear}
-          month={selectedMonth ? selectedMonth + 1 : undefined}
-          onValueClick={() => this.setState({ currentView: VIEW_YEARS })}
-          onPrev={this.previous}
-          onNext={this.next} />
-
-        {this.isYears() ? this.renderYears() : this.renderMonths()}
-      </OutsideClickWrapper>
-    );
+          {this.isYears() ? this.renderYears() : this.renderMonths()}
+        </OutsideClickWrapper>
+      )
+    }
+    else return <div/>
   }
 };
 

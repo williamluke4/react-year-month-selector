@@ -10,8 +10,7 @@ export interface IProps {
   open: boolean;
   className?: string;
   onChange: (selectedYear: number, selectedMonth: number) => void;
-  onClose: () => void;
-  onOutsideClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
+  onClose: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 export interface IState {
@@ -132,7 +131,7 @@ class MonthCalendar extends React.Component<IProps, IState> {
         <div className={`ryms-container ${className || ''}`}>
         <div
           className="ryms-clickout"
-          onClick={this.props.onOutsideClick}
+          onClick={this.props.onClose}
         />
           <Head
             year={selectedYear}

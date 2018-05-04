@@ -35,7 +35,6 @@ class Example extends React.Component<{}, IState> {
         onChange={(year, month) => console.log(`${month} - ${year}`)}
         open={this.state.open}
         onClose={this.handleClose}
-        onOutsideClick={this.handleClose}
         />
         </div>
       </div>

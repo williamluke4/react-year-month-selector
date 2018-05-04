@@ -1,6 +1,6 @@
 {
   "name": "react-year-month-selector",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "Simple React Year and Month Selector",
   "main": "./dist/react-year-month-selector.js",
   "repository": {

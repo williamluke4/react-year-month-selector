@@ -1,53 +1,47 @@
-import React, { Component } from 'react';
-
-import OutsideClickWrapper from './OutsideClickWrapper';
-
+import * as React from 'react';
 import Head from './Head';
 import { MONTHS_NAMES, VIEW_MONTHS, VIEW_YEARS } from './constants';
 import './styles/index.css';
+
 export interface IProps {
-  year: void|number,
-  month: void|number,
-  startYear?: number,
-  open: boolean,
-  onChange: (selectedYear: number, selectedMonth: number) => any,
-  onClose: () => any,
-  onOutsideClick?: (e: any) => any,
+  year: void|number;
+  month: void|number;
+  startYear?: number;
+  open: boolean;
+  className?: string;
+  onChange: (selectedYear: number, selectedMonth: number) => void;
+  onClose: () => void;
+  onOutsideClick?: (e: React.MouseEvent<HTMLDivElement>) => void;
 }
 
 export interface IState {
-  years: Array<number>,
-  selectedYear: void|number,
-  selectedMonth: void|number,
-  currentView: string,
+  years: Array<number>;
+  selectedYear: void|number;
+  selectedMonth: void|number;
+  currentView: string;
 }
 
-class MonthCalendar extends Component<IProps, IState> {
-  public static defaultProps: Partial<IProps> = {
-    onOutsideClick: () => {}
-  };
-
-  constructor(props: IProps){
+class MonthCalendar extends React.Component<IProps, IState> {
+  constructor(props: IProps) {
     super(props);
 
     const { year, month } = this.props;
 
-    const startYear = this.props.startYear || new Date().getFullYear() - 6;
+    const startYear: number = this.props.startYear || new Date().getFullYear() - 6;
 
     this.state = {
-      years: Array.from({length: 12}, (v, k) => k + startYear),
+      years: Array.from({length: 12}, (_v, k) => k + startYear),
       selectedYear: year,
       selectedMonth: month,
       currentView: year ? VIEW_MONTHS : VIEW_YEARS,
     };
   }
-
   componentWillReceiveProps(nextProps) {
     const { year, month } = nextProps;
     const { selectedYear, selectedMonth } = this.state;
 
-    if (typeof year == 'number' &&
-      typeof month == 'number' &&
+    if (typeof year === 'number' &&
+      typeof month === 'number' &&
       (year !== selectedYear || month !== selectedMonth)
     ) {
       this.setState({
@@ -59,7 +53,7 @@ class MonthCalendar extends Component<IProps, IState> {
   }
 
   onChange = (selectedYear, selectedMonth): void => {
-    if (typeof selectedYear == 'number' && typeof selectedMonth == 'number') {
+    if (typeof selectedYear === 'number' && typeof selectedMonth === 'number') {
       this.props.onChange(selectedYear, selectedMonth);
     }
   }
@@ -70,13 +64,13 @@ class MonthCalendar extends Component<IProps, IState> {
   selectYear = (selectedYear: number): void => {
     this.setState({ selectedYear, currentView: VIEW_MONTHS });
     this.onChange(selectedYear, this.state.selectedMonth);
-  };
+  }
 
   selectMonth = (selectedMonth: number): void => {
     this.setState({ selectedMonth });
     this.onChange(this.state.selectedYear, selectedMonth);
     this.onClose();
-  };
+  }
 
   previous = (): void => {
     const startYear = this.state.years[0] - 12;
@@ -89,7 +83,7 @@ class MonthCalendar extends Component<IProps, IState> {
   }
 
   updateYears = (startYear: number): void => {
-    const years = Array.from({length: 12}, (v, k) => k + startYear);
+    const years = Array.from({length: 12}, (_v, k) => k + startYear);
 
     this.setState({ years, currentView: VIEW_YEARS });
   }
@@ -102,29 +96,29 @@ class MonthCalendar extends Component<IProps, IState> {
     const { selectedMonth } = this.state;
 
     return MONTHS_NAMES.map((month, index) => {
-      const selectedKlass = selectedMonth === index ? 'selected_cell' : '';
+      const selectedKlass = selectedMonth === index ? 'ryms-selected_cell' : '';
 
       return (
         <div
           key={index}
           onClick={() => this.selectMonth(index)}
-          className={`col_mp span_1_of_3_mp ${selectedKlass}`}
+          className={`ryms-col_mp ryms-span_1_of_3_mp ${selectedKlass}`}
         >{month}</div>
-      )
+      );
     });
-  };
+  }
 
   renderYears = (): JSX.Element[] => {
     const { selectedYear } = this.state;
 
     return this.state.years.map((year, i) => {
-      const selectedKlass = selectedYear === year ? 'selected_cell' : '';
+      const selectedClass = selectedYear === year ? 'ryms-selected_cell' : '';
 
       return (
         <div
           key={i}
           onClick={() => this.selectYear(year)}
-          className={`col_mp span_1_of_3_mp ${selectedKlass}`}
+          className={`ryms-col_mp ryms-span_1_of_3_mp ${selectedClass}`}
         >{year}</div>
       );
     });
@@ -132,13 +126,14 @@ class MonthCalendar extends Component<IProps, IState> {
 
   render(): JSX.Element {
     const { selectedYear, selectedMonth } = this.state;
-    const { open } = this.props;
-    if(open){
+    const { open, className } = this.props;
+    if (open) {
       return (
-        <OutsideClickWrapper
-          onOutsideClick={() => {}}
-          className="calendar-container"
-        >
+        <div className={`ryms-container ${className || ''}`}>
+        <div
+          className="ryms-clickout"
+          onClick={this.props.onOutsideClick}
+        />
           <Head
             year={selectedYear}
             month={selectedMonth ? selectedMonth + 1 : undefined}
@@ -147,11 +142,10 @@ class MonthCalendar extends Component<IProps, IState> {
             onNext={this.next} />
 
           {this.isYears() ? this.renderYears() : this.renderMonths()}
-        </OutsideClickWrapper>
-      )
-    }
-    else return <div/>
+        </div>
+      );
+    } else { return <div/>; }
   }
-};
+}
 
 export default MonthCalendar;

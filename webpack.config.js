@@ -1,9 +1,10 @@
 var webpack = require('webpack')
 var path = require('path')
-var ExtractTextPlugin = require('extract-text-webpack-plugin')
+var DeclarationBundlerPlugin = require('declaration-bundler-webpack-plugin');
 
 module.exports = {
   entry: './src/index',
+  mode: 'production',
   output: {
     libraryTarget: 'umd',
     library: 'ReactYearMonthSelector',
@@ -11,23 +12,13 @@ module.exports = {
     filename: 'react-year-month-selector.js'
   },
   module: {
-    loaders: [
-      {
-        test: /\.tsx?$/,
-        loader: 'ts-loader?' + JSON.stringify({
-          configFile: 'tsbuild.json'
-        }),
-        exclude: /node_modules/
-      },
-      {
-        test: /\.css$/i,
-        use: ExtractTextPlugin.extract({
-          fallback: 'style-loader',
-          use: [
-            { loader: 'css-loader', options: { minimize: process.env.NODE_ENV === 'production' } }
-          ]
-        })
-      }
+    rules: [
+      { test: /\.tsx?$/, use: "ts-loader" },
+      { test: /\.css$/, use: [
+        { loader: "style-loader" },
+        { loader: "css-loader" }
+      ] },
+      
     ]
   },
   resolve: {
@@ -69,9 +60,12 @@ module.exports = {
   ],
   node: { Buffer: false },
   plugins: [
-    new ExtractTextPlugin('react-year-month-selector.css', { allChunks: true }),
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': JSON.stringify(process.env.NODE_ENV)
+    }),
+    new DeclarationBundlerPlugin({
+      moduleName:'ReactYearMonthSelector',
+      out:'./types.d.ts',
     })
   ]
 }

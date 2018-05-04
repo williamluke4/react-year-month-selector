@@ -1,6 +1,6 @@
 {
   "name": "react-year-month-selector",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Simple React Year and Month Selector",
   "main": "./dist/react-year-month-selector.js",
   "repository": {
@@ -53,7 +53,7 @@
     "build": "webpack",
     "build:demo": "webpack --config webpack.demo.config.js",
     "compile": "npm run build && npm run build:demo",
-    "release": "npm run compile && git commit -m NPM-Publish && git push && npm publish",
+    "pub": "npm run compile && npm publish",
     "dev": "webpack-dev-server --config webpack.demo.config.js"
   }
 }
